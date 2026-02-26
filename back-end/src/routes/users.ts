@@ -3,7 +3,7 @@ const router = Router()
 
 /* GET home page. */
 router.get('/', (_req: Request, res: Response) => {
-  res.send('Fetched all users')
+  res.send('Fetched all users!!')
 })
 
 /* POST a user */
