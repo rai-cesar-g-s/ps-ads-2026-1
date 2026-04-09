@@ -9,9 +9,6 @@ const app = express()
 
 import cors from 'cors'
 
-import usersRoute from './routes/users.js'
-app.use('/users', usersRoute)
-
 app.use(cors({
  origin: process.env.ALLOWED_ORIGINS.split(','),
  // credentials: true   // Habilita o envio de cookies para o front-end
@@ -34,5 +31,9 @@ app.use('/customers', customersRoute)
 
 import carsRoute from './routes/cars.js'
 app.use('/cars', carsRoute)
+
+import usersRoute from './routes/users.js'
+app.use('/users', usersRoute)
+
 
 export default app
