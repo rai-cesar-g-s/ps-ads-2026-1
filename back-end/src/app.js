@@ -2,7 +2,7 @@ import express, { json, urlencoded } from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 
-import indexRouter from './routes/index'
+import indexRouter from './routes/index.js'
 
 
 const app = express()
@@ -20,6 +20,12 @@ app.use(urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use('/', indexRouter)
+
+/******* MIDDLEWARE DE AUTENTICAÇÃO *******/
+
+
+import authMiddleware from './middleware/auth.js'
+app.use(authMiddleware)
 
 /**************** ROTAS *******************/
 

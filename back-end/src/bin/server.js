@@ -4,10 +4,9 @@
  * Module dependencies.
  */
 
-import app from '../app'
+import app from '../app.js'
 import chalk from 'chalk'
 import { createServer } from 'http'
-import { ExpressError } from '../types/error'
 
 /**
  * Get port from environment and store in Express.
@@ -34,7 +33,7 @@ server.on('listening', onListening)
  * Normalize a port into a number, string, or false.
  */
 
-function normalizePort(val: string) {
+function normalizePort(val) {
   let port = parseInt(val, 10)
 
   if (isNaN(port)) {
@@ -54,7 +53,7 @@ function normalizePort(val: string) {
  * Event listener for HTTP server "error" event.
  */
 
-function onError(error: ExpressError) {
+function onError(error) {
   if (error.syscall !== 'listen') {
     throw error
   }
