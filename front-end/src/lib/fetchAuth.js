@@ -35,13 +35,11 @@ function buildOptions(method = 'GET', body = null) {
  const token = window.localStorage.getItem(import.meta.env.VITE_AUTH_TOKEN_NAME)
 
 
- // console.log({token})
-
-
  if(token) options.headers.authorization = `Bearer ${token}`
 
 
  return options
+
 }
 
 
